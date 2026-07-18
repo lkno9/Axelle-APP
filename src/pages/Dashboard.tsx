@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CalendarPlus, Timer, Sparkles, ChevronRight, Clock } from "lucide-react";
+import { CalendarPlus, Timer, Sparkles, ChevronRight, Clock, Wand2 } from "lucide-react";
 import { useApp } from "../lib/store";
 import { todayKey, formatLong, formatMinutes, weekStart, toKey, addDays } from "../lib/dates";
 import { CATEGORY_META } from "../lib/types";
@@ -88,16 +88,20 @@ export default function Dashboard() {
 
       <section>
         <h3 className="section-title mb-2">Accès rapide</h3>
-        <div className="grid grid-cols-3 gap-3">
-          <Link to="/agenda?new=1" className="card flex flex-col items-center gap-2 py-4 text-center">
+        <div className="grid grid-cols-4 gap-2">
+          <Link to="/agenda?new=1" className="card flex flex-col items-center gap-2 py-4 text-center px-1">
             <CalendarPlus size={22} className="text-gold-soft" />
             <span className="text-xs text-ink-dim">Événement</span>
           </Link>
-          <Link to="/study" className="card flex flex-col items-center gap-2 py-4 text-center">
+          <Link to="/planifier" className="card flex flex-col items-center gap-2 py-4 text-center px-1">
+            <Wand2 size={22} className="text-gold-soft" />
+            <span className="text-xs text-ink-dim">Semaine</span>
+          </Link>
+          <Link to="/study" className="card flex flex-col items-center gap-2 py-4 text-center px-1">
             <Timer size={22} className="text-gold-soft" />
             <span className="text-xs text-ink-dim">Pomodoro</span>
           </Link>
-          <Link to="/motivation" className="card flex flex-col items-center gap-2 py-4 text-center">
+          <Link to="/motivation" className="card flex flex-col items-center gap-2 py-4 text-center px-1">
             <Sparkles size={22} className="text-gold-soft" />
             <span className="text-xs text-ink-dim">Motivation</span>
           </Link>

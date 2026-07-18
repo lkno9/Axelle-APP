@@ -8,6 +8,25 @@ export interface AgendaEvent {
   end: string; // HH:mm
   category: EventCategory;
   note?: string;
+  taskId?: string; // présent si la séance vient du planificateur
+}
+
+export interface Task {
+  id: string;
+  title: string;
+  deadline: string; // YYYY-MM-DD
+  estimatedMin: number;
+  category: EventCategory;
+  done: boolean;
+}
+
+export interface PlannerSettings {
+  weekdayStart: string;
+  weekdayEnd: string;
+  weekendStart: string;
+  weekendEnd: string;
+  maxDailyMin: number;
+  blockMin: number; // durée d'une séance (25 ou 50)
 }
 
 export interface HobbyEntry {

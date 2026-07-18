@@ -12,6 +12,7 @@ const TABS = [
 const TITLES: Record<string, string> = {
   "/": "KAIROS",
   "/agenda": "Agenda",
+  "/planifier": "Organiser ma semaine",
   "/motivation": "Motivation",
   "/study": "Study with me",
   "/hobbies": "Hobbies",

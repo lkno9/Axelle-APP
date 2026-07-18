@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import { Plus, ChevronLeft, ChevronRight, Trash2, Pencil } from "lucide-react";
+import { Link, useSearchParams } from "react-router-dom";
+import { Plus, ChevronLeft, ChevronRight, Trash2, Pencil, Wand2 } from "lucide-react";
 import Modal from "../components/Modal";
 import { useApp, uid } from "../lib/store";
 import { AgendaEvent, EventCategory, CATEGORY_META } from "../lib/types";
@@ -75,6 +75,10 @@ export default function Agenda() {
 
   return (
     <div className="space-y-5">
+      <Link to="/planifier" className="btn-ghost w-full flex items-center justify-center gap-2 text-gold-soft border-gold-dim/40">
+        <Wand2 size={16} /> Organiser ma semaine
+      </Link>
+
       <div className="flex items-center justify-between">
         <button className="p-2 text-ink-dim" onClick={() => setAnchor(addDays(monday, -7))} aria-label="Semaine précédente">
           <ChevronLeft size={20} />

@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
-import { AgendaEvent, Hobby, Profile, Settings, StudySession } from "./types";
+import { AgendaEvent, Hobby, PlannerSettings, Profile, Settings, StudySession, Task } from "./types";
 
 function load<T>(key: string, fallback: T): T {
   try {
@@ -31,6 +31,10 @@ interface AppState {
   setSessions: (fn: (prev: StudySession[]) => StudySession[]) => void;
   favorites: string[];
   setFavorites: (fn: (prev: string[]) => string[]) => void;
+  tasks: Task[];
+  setTasks: (fn: (prev: Task[]) => Task[]) => void;
+  planner: PlannerSettings;
+  setPlanner: (p: PlannerSettings) => void;
   profile: Profile;
   setProfile: (p: Profile) => void;
   settings: Settings;
@@ -45,6 +49,15 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [hobbies, setHobbiesRaw] = usePersisted<Hobby[]>("hobbies", []);
   const [sessions, setSessionsRaw] = usePersisted<StudySession[]>("sessions", []);
   const [favorites, setFavoritesRaw] = usePersisted<string[]>("favorites", []);
+  const [tasks, setTasksRaw] = usePersisted<Task[]>("tasks", []);
+  const [planner, setPlanner] = usePersisted<PlannerSettings>("planner", {
+    weekdayStart: "17:00",
+    weekdayEnd: "22:00",
+    weekendStart: "10:00",
+    weekendEnd: "19:00",
+    maxDailyMin: 240,
+    blockMin: 50,
+  });
   const [profile, setProfile] = usePersisted<Profile>("profile", {
     name: "",
     goal: "",
@@ -72,6 +85,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
         setSessions: (fn) => setSessionsRaw((p) => fn(p)),
         favorites,
         setFavorites: (fn) => setFavoritesRaw((p) => fn(p)),
+        tasks,
+        setTasks: (fn) => setTasksRaw((p) => fn(p)),
+        planner,
+        setPlanner,
         profile,
         setProfile,
         settings,
