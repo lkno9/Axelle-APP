@@ -72,14 +72,14 @@ export default function Motivation() {
             const themeMeta = THEMES.find((t) => t.id === q.theme);
             return (
               <div key={q.id} className="card">
-                <p className="font-serif italic text-lg leading-snug">« {q.text} »</p>
+                <p className="italic text-lg leading-snug">« {q.text} »</p>
                 <div className="flex items-center justify-between mt-3">
                   <p className="text-xs text-ink-dim">
                     — {q.author} · <span className="text-ink-faint">{themeMeta?.label}</span>
                   </p>
                   <button
                     onClick={() => toggleFav(q.id)}
-                    className={fav ? "text-gold" : "text-ink-faint"}
+                    className={fav ? "text-ink" : "text-ink-faint"}
                     aria-label="Favori"
                   >
                     <Heart size={18} fill={fav ? "currentColor" : "none"} />

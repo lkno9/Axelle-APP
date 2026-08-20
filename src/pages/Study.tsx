@@ -99,14 +99,14 @@ export default function Study() {
                 <button
                   key={m.id}
                   onClick={() => setModeId(m.id)}
-                  className={`card py-3 text-center text-sm ${modeId === m.id ? "border-gold-dim/70 text-gold-soft" : "text-ink-dim"}`}
+                  className={`card py-3 text-center text-sm ${modeId === m.id ? "border-gold-dim/70 text-ink" : "text-ink-dim"}`}
                 >
                   {m.label}
                 </button>
               ))}
               <button
                 onClick={() => setModeId("custom")}
-                className={`card py-3 text-center text-sm ${modeId === "custom" ? "border-gold-dim/70 text-gold-soft" : "text-ink-dim"}`}
+                className={`card py-3 text-center text-sm ${modeId === "custom" ? "border-gold-dim/70 text-ink" : "text-ink-dim"}`}
               >
                 Personnalisé
               </button>
@@ -120,9 +120,9 @@ export default function Study() {
                   step={5}
                   value={customFocus}
                   onChange={(e) => setCustomFocus(Number(e.target.value))}
-                  className="flex-1 accent-[#d4af37] border-none bg-transparent p-0"
+                  className="flex-1 accent-[#ffffff] border-none bg-transparent p-0"
                 />
-                <span className="text-sm text-gold-soft w-24 text-right">
+                <span className="text-sm text-ink w-24 text-right">
                   {customFocus} min / {pauseMin} min
                 </span>
               </div>
@@ -147,15 +147,15 @@ export default function Study() {
       ) : (
         <section className="flex flex-col items-center pt-4">
           <p className="text-sm text-ink-dim mb-1">{ambiance}</p>
-          <p className={`text-xs uppercase tracking-[0.2em] mb-4 ${phase === "focus" ? "text-gold-soft" : "text-blue"}`}>
+          <p className={`text-xs uppercase tracking-[0.2em] mb-4 ${phase === "focus" ? "text-ink" : "text-ink-dim"}`}>
             {phase === "focus" ? "Concentration" : "Pause"}
           </p>
           <div className="relative w-56 h-56">
             <svg viewBox="0 0 200 200" className="w-full h-full -rotate-90">
-              <circle cx="100" cy="100" r={R} fill="none" stroke="#232d52" strokeWidth="8" />
+              <circle cx="100" cy="100" r={R} fill="none" stroke="#262626" strokeWidth="8" />
               <circle
                 cx="100" cy="100" r={R} fill="none"
-                stroke={phase === "focus" ? "#d4af37" : "#7ea6e8"}
+                stroke={phase === "focus" ? "#ffffff" : "#8a8a8a"}
                 strokeWidth="8" strokeLinecap="round"
                 strokeDasharray={CIRC}
                 strokeDashoffset={CIRC * (1 - progress)}
@@ -163,7 +163,7 @@ export default function Study() {
               />
             </svg>
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <span className="font-serif text-5xl tabular-nums">{mm}:{ss}</span>
+              <span className="text-5xl tabular-nums">{mm}:{ss}</span>
               <span className="text-xs text-ink-faint mt-1">
                 {phase === "focus" ? `${focusMin} min de focus` : <span className="flex items-center gap-1"><Coffee size={12} /> {pauseMin} min de pause</span>}
               </span>
@@ -182,7 +182,7 @@ export default function Study() {
 
       <section className="card">
         <div className="flex items-baseline justify-between mb-3">
-          <h3 className="font-serif text-lg text-gold-soft">Statistiques d'étude</h3>
+          <h3 className="text-lg text-ink">Statistiques d'étude</h3>
           <span className="text-xs text-ink-dim">{formatMinutes(weekTotal)} cette semaine</span>
         </div>
         <div className="flex items-end justify-between gap-2 h-24">
@@ -197,7 +197,7 @@ export default function Study() {
                     style={{ height: `${min ? Math.max(8, (min / maxDay) * 100) : 2}%` }}
                   />
                 </div>
-                <span className={`text-[10px] ${isToday ? "text-gold-soft" : "text-ink-faint"}`}>
+                <span className={`text-[10px] ${isToday ? "text-ink" : "text-ink-faint"}`}>
                   {DAY_SHORT[d.getDay()]}
                 </span>
               </div>

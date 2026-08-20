@@ -8,7 +8,7 @@ export default function Parametres() {
   return (
     <div className="space-y-4">
       <section className="card space-y-4">
-        <h3 className="font-serif text-lg text-gold-soft">Préférences</h3>
+        <h3 className="text-lg text-ink">Préférences</h3>
         <label className="flex items-center justify-between gap-3">
           <span className="text-sm">Citation du jour sur l'accueil</span>
           <button
@@ -33,16 +33,16 @@ export default function Parametres() {
       </section>
 
       <section className="card space-y-3">
-        <h3 className="font-serif text-lg text-gold-soft">Données</h3>
+        <h3 className="text-lg text-ink">Données</h3>
         <p className="text-xs text-ink-dim leading-relaxed">
           Tes données sont stockées uniquement sur cet appareil. La synchronisation
           entre appareils (avec un compte) arrivera dans une prochaine version.
         </p>
         {confirmReset ? (
           <div className="space-y-2">
-            <p className="text-sm text-rose-300">Tout effacer ? Cette action est définitive.</p>
+            <p className="text-sm text-ink">Tout effacer ? Cette action est définitive.</p>
             <div className="flex gap-2">
-              <button onClick={resetAll} className="flex-1 rounded-xl px-4 py-2.5 text-sm font-semibold bg-rose-400 text-night">
+              <button onClick={resetAll} className="flex-1 rounded-xl px-4 py-2.5 text-sm font-semibold bg-ink text-night">
                 Oui, tout effacer
               </button>
               <button onClick={() => setConfirmReset(false)} className="btn-ghost flex-1">
@@ -51,14 +51,14 @@ export default function Parametres() {
             </div>
           </div>
         ) : (
-          <button onClick={() => setConfirmReset(true)} className="btn-ghost w-full text-rose-300 border-rose-300/30">
+          <button onClick={() => setConfirmReset(true)} className="btn-ghost w-full text-ink border-ink/40">
             Réinitialiser toutes les données
           </button>
         )}
       </section>
 
       <section className="card">
-        <h3 className="font-serif text-lg text-gold-soft mb-1">À propos</h3>
+        <h3 className="text-lg text-ink mb-1">À propos</h3>
         <p className="text-xs text-ink-dim leading-relaxed">
           KAIROS v0.1 — « Le bon moment, c'est maintenant. »<br />
           Organize today, elevate tomorrow.

@@ -6,27 +6,30 @@ export default {
     extend: {
       colors: {
         night: {
-          DEFAULT: "#0b1020",
-          soft: "#111832",
-          card: "#141c38",
-          line: "#232d52",
+          DEFAULT: "#000000",
+          soft: "#0a0a0a",
+          card: "#0e0e0e",
+          line: "#242424",
         },
         gold: {
-          DEFAULT: "#d4af37",
-          soft: "#e3c877",
-          dim: "#9c8330",
+          DEFAULT: "#ffffff",
+          soft: "#f2f2f2",
+          dim: "#8a8a8a",
         },
         ink: {
-          DEFAULT: "#e9e6dc",
-          dim: "#a8a99e",
-          faint: "#6b6f80",
+          DEFAULT: "#fafafa",
+          dim: "#a1a1a1",
+          faint: "#5c5c5c",
         },
-        lav: "#b8a7e8",
-        blue: "#7ea6e8",
+        lav: "#d4d4d4",
+        blue: "#8a8a8a",
       },
       fontFamily: {
-        serif: ["'Cormorant Garamond'", "Georgia", "serif"],
+        serif: ["Inter", "system-ui", "sans-serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
+      },
+      letterSpacing: {
+        tightest: "-0.03em",
       },
     },
   },

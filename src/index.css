@@ -8,30 +8,32 @@
   }
   body {
     @apply bg-night text-ink font-sans antialiased;
-    background-image: radial-gradient(1200px 500px at 50% -10%, rgba(212, 175, 55, 0.06), transparent 60%);
+  }
+  h1, h2, h3 {
+    @apply tracking-tightest;
   }
   input, textarea, select {
-    @apply bg-night-soft border border-night-line rounded-xl px-3 py-2.5 text-sm text-ink placeholder:text-ink-faint outline-none focus:border-gold-dim transition-colors w-full;
+    @apply bg-transparent border border-night-line rounded-lg px-3 py-2.5 text-sm text-ink placeholder:text-ink-faint outline-none focus:border-ink-dim transition-colors w-full;
   }
 }
 
 @layer components {
   .card {
-    @apply bg-night-card/80 border border-night-line rounded-2xl p-4;
+    @apply bg-night-card border border-night-line rounded-xl p-4;
   }
   .btn-gold {
-    @apply bg-gold text-night font-semibold rounded-xl px-4 py-2.5 text-sm active:scale-[0.98] transition-transform;
+    @apply bg-ink text-night font-medium rounded-lg px-4 py-2.5 text-sm active:scale-[0.98] transition-transform;
   }
   .btn-ghost {
-    @apply border border-night-line text-ink-dim rounded-xl px-4 py-2.5 text-sm active:scale-[0.98] transition-transform;
+    @apply border border-night-line text-ink-dim rounded-lg px-4 py-2.5 text-sm hover:border-ink-dim active:scale-[0.98] transition-all;
   }
   .section-title {
-    @apply font-serif text-2xl text-gold-soft;
+    @apply text-[11px] font-medium uppercase tracking-[0.22em] text-ink-dim;
   }
   .chip {
-    @apply text-xs px-3 py-1.5 rounded-full border border-night-line text-ink-dim whitespace-nowrap;
+    @apply text-xs px-3 py-1.5 rounded-full border border-night-line text-ink-dim whitespace-nowrap transition-colors;
   }
   .chip-on {
-    @apply border-gold-dim text-gold-soft bg-gold/10;
+    @apply border-ink text-night bg-ink;
   }
 }

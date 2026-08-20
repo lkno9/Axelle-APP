@@ -94,7 +94,7 @@ export default function Planifier() {
     <div className="space-y-5">
       <p className="text-sm text-ink-dim">
         Donne tes échéances et ce qu'il te reste à faire : KAIROS répartit des séances
-        de travail dans tes créneaux libres pour que tout soit prêt <span className="text-gold-soft">la veille</span>.
+        de travail dans tes créneaux libres pour que tout soit prêt <span className="text-ink">la veille</span>.
       </p>
 
       <section>
@@ -113,7 +113,7 @@ export default function Planifier() {
           <div className="space-y-2">
             {activeTasks.map((t) => (
               <div key={t.id} className={`card py-3 flex items-center gap-3 ${t.done ? "opacity-50" : ""}`}>
-                <button onClick={() => toggleDone(t.id)} className={t.done ? "text-emerald-400" : "text-ink-faint"} aria-label="Fait">
+                <button onClick={() => toggleDone(t.id)} className={t.done ? "text-ink" : "text-ink-faint"} aria-label="Fait">
                   {t.done ? <CheckCircle2 size={20} /> : <Circle size={20} />}
                 </button>
                 <span className={`w-2 h-2 rounded-full shrink-0 ${CATEGORY_META[t.category].dot}`} />
@@ -133,7 +133,7 @@ export default function Planifier() {
       </section>
 
       <section className="card space-y-3">
-        <h3 className="font-serif text-lg text-gold-soft">Mes disponibilités</h3>
+        <h3 className="text-lg text-ink">Mes disponibilités</h3>
         <div className="grid grid-cols-2 gap-3">
           <label className="text-xs text-ink-dim space-y-1">
             <span>Semaine — de</span>
@@ -158,7 +158,7 @@ export default function Planifier() {
             type="range" min={60} max={480} step={30}
             value={planner.maxDailyMin}
             onChange={(e) => setPlanner({ ...planner, maxDailyMin: Number(e.target.value) })}
-            className="accent-[#d4af37] border-none bg-transparent p-0"
+            className="accent-[#ffffff] border-none bg-transparent p-0"
           />
         </label>
         <div className="flex items-center gap-2">
@@ -182,12 +182,12 @@ export default function Planifier() {
       {plan && (
         <section className="space-y-3">
           {plan.unplaced.length > 0 && (
-            <div className="card border-rose-400/40 flex gap-3">
-              <AlertTriangle size={18} className="text-rose-300 shrink-0 mt-0.5" />
+            <div className="card border-ink/40 flex gap-3">
+              <AlertTriangle size={18} className="text-ink shrink-0 mt-0.5" />
               <div className="text-xs text-ink-dim space-y-1">
                 {plan.unplaced.map(({ task, missingMin }) => (
                   <p key={task.id}>
-                    Il manque <span className="text-rose-300">{formatMinutes(missingMin)}</span> pour
+                    Il manque <span className="text-ink">{formatMinutes(missingMin)}</span> pour
                     « {task.title} » avant son échéance — élargis tes disponibilités ou réduis l'estimation.
                   </p>
                 ))}
@@ -206,7 +206,7 @@ export default function Planifier() {
                 const d = fromKey(date);
                 return (
                   <div key={date} className="card py-3">
-                    <p className="text-xs text-gold-soft capitalize mb-2">
+                    <p className="text-xs text-ink capitalize mb-2">
                       {DAY_NAMES[d.getDay()]} {d.getDate()} {MONTH_NAMES[d.getMonth()]}
                       {date === today ? " — aujourd'hui" : ""}
                     </p>
@@ -223,7 +223,7 @@ export default function Planifier() {
                 );
               })}
               {added ? (
-                <Link to="/agenda" className="btn-ghost w-full flex items-center justify-center gap-2 text-emerald-400 border-emerald-400/30">
+                <Link to="/agenda" className="btn-ghost w-full flex items-center justify-center gap-2 text-ink border-night-line">
                   <CalendarCheck size={17} /> Ajouté ! Voir l'agenda
                 </Link>
               ) : (
@@ -259,7 +259,7 @@ export default function Planifier() {
               type="range" min={30} max={600} step={30}
               value={form.estimatedMin}
               onChange={(e) => setForm({ ...form, estimatedMin: Number(e.target.value) })}
-              className="accent-[#d4af37] border-none bg-transparent p-0"
+              className="accent-[#ffffff] border-none bg-transparent p-0"
             />
           </label>
           <div className="flex gap-2 flex-wrap">

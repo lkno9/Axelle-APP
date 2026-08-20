@@ -89,7 +89,7 @@ export default function Hobbies() {
                   </button>
                 </div>
                 <div className="mt-3 h-1.5 rounded-full bg-night-line overflow-hidden">
-                  <div className={`h-full rounded-full ${pct >= 100 ? "bg-emerald-400" : "bg-gold"}`} style={{ width: `${pct}%` }} />
+                  <div className={`h-full rounded-full ${pct >= 100 ? "bg-ink" : "bg-gold"}`} style={{ width: `${pct}%` }} />
                 </div>
                 <button onClick={() => { setLogHobby(h); setLog({ minutes: 30, note: "" }); }} className="btn-ghost w-full mt-3 text-xs">
                   + Ajouter une entrée
@@ -125,7 +125,7 @@ export default function Hobbies() {
               type="range" min={30} max={600} step={30}
               value={form.weeklyTargetMin}
               onChange={(e) => setForm({ ...form, weeklyTargetMin: Number(e.target.value) })}
-              className="accent-[#d4af37] border-none bg-transparent p-0"
+              className="accent-[#ffffff] border-none bg-transparent p-0"
             />
           </label>
           <button onClick={addHobby} className="btn-gold w-full" disabled={!form.name.trim()}>
@@ -142,7 +142,7 @@ export default function Hobbies() {
               type="range" min={5} max={240} step={5}
               value={log.minutes}
               onChange={(e) => setLog({ ...log, minutes: Number(e.target.value) })}
-              className="accent-[#d4af37] border-none bg-transparent p-0"
+              className="accent-[#ffffff] border-none bg-transparent p-0"
             />
           </label>
           <textarea
@@ -171,7 +171,7 @@ export default function Hobbies() {
                   <div key={e.id} className="border border-night-line rounded-xl p-3">
                     <div className="flex justify-between text-xs text-ink-dim">
                       <span>{d.getDate()}/{d.getMonth() + 1}/{d.getFullYear()}</span>
-                      <span className="text-gold-soft">{formatMinutes(e.minutes)}</span>
+                      <span className="text-ink">{formatMinutes(e.minutes)}</span>
                     </div>
                     {e.note && <p className="text-sm mt-1">{e.note}</p>}
                   </div>

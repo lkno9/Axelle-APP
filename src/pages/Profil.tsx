@@ -21,31 +21,31 @@ export default function Profil() {
     <div className="space-y-5">
       <div className="card text-center py-6">
         <span className="text-5xl">{draft.emoji}</span>
-        <h2 className="font-serif text-2xl mt-2">{profile.name || "Voyageur du temps"}</h2>
+        <h2 className="text-2xl mt-2">{profile.name || "Voyageur du temps"}</h2>
         {profile.goal && <p className="text-sm text-ink-dim italic mt-1">« {profile.goal} »</p>}
       </div>
 
       <section className="grid grid-cols-2 gap-3">
         <div className="card text-center py-4">
-          <p className="font-serif text-2xl text-gold-soft">{formatMinutes(totalFocus)}</p>
+          <p className="text-2xl text-ink">{formatMinutes(totalFocus)}</p>
           <p className="text-xs text-ink-dim mt-1">de concentration au total</p>
         </div>
         <div className="card text-center py-4">
-          <p className="font-serif text-2xl text-gold-soft">{events.length}</p>
+          <p className="text-2xl text-ink">{events.length}</p>
           <p className="text-xs text-ink-dim mt-1">événements planifiés</p>
         </div>
         <div className="card text-center py-4">
-          <p className="font-serif text-2xl text-gold-soft">{hobbies.length}</p>
+          <p className="text-2xl text-ink">{hobbies.length}</p>
           <p className="text-xs text-ink-dim mt-1">activités cultivées</p>
         </div>
         <div className="card text-center py-4">
-          <p className="font-serif text-2xl text-gold-soft">{favorites.length}</p>
+          <p className="text-2xl text-ink">{favorites.length}</p>
           <p className="text-xs text-ink-dim mt-1">citations favorites</p>
         </div>
       </section>
 
       <section className="card space-y-3">
-        <h3 className="font-serif text-lg text-gold-soft">Modifier le profil</h3>
+        <h3 className="text-lg text-ink">Modifier le profil</h3>
         <input
           placeholder="Ton prénom"
           value={draft.name}

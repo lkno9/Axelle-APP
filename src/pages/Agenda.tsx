@@ -75,7 +75,7 @@ export default function Agenda() {
 
   return (
     <div className="space-y-5">
-      <Link to="/planifier" className="btn-ghost w-full flex items-center justify-center gap-2 text-gold-soft border-gold-dim/40">
+      <Link to="/planifier" className="btn-ghost w-full flex items-center justify-center gap-2 text-ink border-gold-dim/40">
         <Wand2 size={16} /> Organiser ma semaine
       </Link>
 
@@ -104,7 +104,7 @@ export default function Agenda() {
                 isSel
                   ? "bg-gold text-night border-gold font-semibold"
                   : isToday
-                    ? "border-gold-dim/60 text-gold-soft"
+                    ? "border-gold-dim/60 text-ink"
                     : "border-night-line text-ink-dim"
               }`}
             >

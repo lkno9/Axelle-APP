@@ -26,8 +26,8 @@ export default function Layout() {
 
   return (
     <div className="mx-auto max-w-md min-h-dvh flex flex-col">
-      <header className="sticky top-0 z-20 bg-night/85 backdrop-blur border-b border-night-line px-5 pt-[calc(env(safe-area-inset-top)+0.75rem)] pb-3 flex items-center justify-between">
-        <h1 className="font-serif text-2xl tracking-wide text-gold-soft">
+      <header className="sticky top-0 z-20 bg-night/80 backdrop-blur-md border-b border-night-line px-5 pt-[calc(env(safe-area-inset-top)+0.75rem)] pb-3 flex items-center justify-between">
+        <h1 className="text-lg font-medium tracking-tightest text-ink">
           {title === "KAIROS" ? (
             <span className="tracking-[0.25em]">KAIROS</span>
           ) : (
@@ -37,14 +37,14 @@ export default function Layout() {
         <div className="flex items-center gap-1">
           <Link
             to="/profil"
-            className={`p-2 rounded-full ${pathname === "/profil" ? "text-gold-soft" : "text-ink-dim"}`}
+            className={`p-2 rounded-full ${pathname === "/profil" ? "text-ink" : "text-ink-dim"}`}
             aria-label="Profil"
           >
             <User size={20} />
           </Link>
           <Link
             to="/parametres"
-            className={`p-2 rounded-full ${pathname === "/parametres" ? "text-gold-soft" : "text-ink-dim"}`}
+            className={`p-2 rounded-full ${pathname === "/parametres" ? "text-ink" : "text-ink-dim"}`}
             aria-label="Paramètres"
           >
             <Settings size={20} />
@@ -56,7 +56,7 @@ export default function Layout() {
         <Outlet />
       </main>
 
-      <nav className="fixed bottom-0 inset-x-0 z-20 bg-night/90 backdrop-blur border-t border-night-line">
+      <nav className="fixed bottom-0 inset-x-0 z-20 bg-night/80 backdrop-blur-md border-t border-night-line">
         <div className="mx-auto max-w-md grid grid-cols-5 pb-[env(safe-area-inset-bottom)]">
           {TABS.map(({ to, label, icon: Icon }) => (
             <NavLink
@@ -65,7 +65,7 @@ export default function Layout() {
               end={to === "/"}
               className={({ isActive }) =>
                 `flex flex-col items-center gap-1 py-2.5 text-[11px] ${
-                  isActive ? "text-gold-soft" : "text-ink-faint"
+                  isActive ? "text-ink" : "text-ink-faint"
                 }`
               }
             >

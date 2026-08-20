@@ -34,23 +34,23 @@ export default function Dashboard() {
     <div className="space-y-5">
       <div>
         <p className="text-ink-dim text-sm capitalize">{formatLong(now)}</p>
-        <h2 className="font-serif text-3xl mt-1">
+        <h2 className="text-3xl mt-1">
           {greeting}
-          {profile.name ? ` ${profile.name}` : ""} <span className="text-gold-soft">✦</span>
+          {profile.name ? ` ${profile.name}` : ""} <span className="text-ink">✦</span>
         </h2>
       </div>
 
       {settings.showQuoteOnHome && (
         <div className="card border-gold-dim/40">
-          <p className="font-serif italic text-lg leading-snug">« {quote.text} »</p>
-          <p className="text-right text-xs text-gold-soft mt-2">— {quote.author}</p>
+          <p className="italic text-lg leading-snug">« {quote.text} »</p>
+          <p className="text-right text-xs text-ink mt-2">— {quote.author}</p>
         </div>
       )}
 
       <section>
         <div className="flex items-center justify-between mb-2">
           <h3 className="section-title">Aujourd'hui</h3>
-          <Link to="/agenda" className="text-xs text-gold-soft flex items-center">
+          <Link to="/agenda" className="text-xs text-ink flex items-center">
             Agenda <ChevronRight size={14} />
           </Link>
         </div>
@@ -78,7 +78,7 @@ export default function Dashboard() {
                       <Clock size={12} /> {e.start} – {e.end}
                     </p>
                   </div>
-                  {isNext && <span className="text-[10px] text-gold-soft border border-gold-dim/50 rounded-full px-2 py-0.5">à suivre</span>}
+                  {isNext && <span className="text-[10px] text-ink border border-gold-dim/50 rounded-full px-2 py-0.5">à suivre</span>}
                 </div>
               );
             })}
@@ -90,19 +90,19 @@ export default function Dashboard() {
         <h3 className="section-title mb-2">Accès rapide</h3>
         <div className="grid grid-cols-4 gap-2">
           <Link to="/agenda?new=1" className="card flex flex-col items-center gap-2 py-4 text-center px-1">
-            <CalendarPlus size={22} className="text-gold-soft" />
+            <CalendarPlus size={22} className="text-ink" />
             <span className="text-xs text-ink-dim">Événement</span>
           </Link>
           <Link to="/planifier" className="card flex flex-col items-center gap-2 py-4 text-center px-1">
-            <Wand2 size={22} className="text-gold-soft" />
+            <Wand2 size={22} className="text-ink" />
             <span className="text-xs text-ink-dim">Semaine</span>
           </Link>
           <Link to="/study" className="card flex flex-col items-center gap-2 py-4 text-center px-1">
-            <Timer size={22} className="text-gold-soft" />
+            <Timer size={22} className="text-ink" />
             <span className="text-xs text-ink-dim">Pomodoro</span>
           </Link>
           <Link to="/motivation" className="card flex flex-col items-center gap-2 py-4 text-center px-1">
-            <Sparkles size={22} className="text-gold-soft" />
+            <Sparkles size={22} className="text-ink" />
             <span className="text-xs text-ink-dim">Motivation</span>
           </Link>
         </div>
@@ -111,7 +111,7 @@ export default function Dashboard() {
       <section className="card flex items-center justify-between">
         <div>
           <p className="text-xs text-ink-dim">Temps d'étude cette semaine</p>
-          <p className="font-serif text-2xl text-gold-soft mt-0.5">{formatMinutes(weekFocus)}</p>
+          <p className="text-2xl text-ink mt-0.5">{formatMinutes(weekFocus)}</p>
         </div>
         <Link to="/study" className="btn-ghost text-xs">Étudier</Link>
       </section>
